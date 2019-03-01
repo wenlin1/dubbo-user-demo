@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- status=debug 可以查看log4j的装配过程 -->
+<Configuration status="off">
+
+	<!-- 将配置好的log4j2.xml 放到项目的classpath下即可 -->
+	<!-- 日志封装类对真正行号已做处理，配置文件中不需配置 -->
+	<!-- Appenders -->
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level %logger{36}: %msg%n" />
+		</Console>
+	</Appenders>
+	 
+	<Loggers>
+		<Logger name="org.springframework" level="WARN"/>
+		<Root level="INFO">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+		
+</Configuration>
