@@ -46,5 +46,8 @@
         <property name="connectionProperties" value="druid.stat.slowSqlMillis=100" />
     </bean>
 
+    <bean id="dataSourcebase" class="com.p6spy.engine.spy.P6DataSource">
+        <constructor-arg ref="dataSource"></constructor-arg>
+    </bean>
 
 </beans>
