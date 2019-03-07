@@ -11,7 +11,6 @@ import java.io.Serializable;
  * 用户返回实体
  */
 @Data
-@ToString(exclude="serialVersionUID")
 public class UserEntityResp  implements Serializable{
     private static final long serialVersionUID = 2L;
     /**用户id */
@@ -22,16 +21,6 @@ public class UserEntityResp  implements Serializable{
     private int age;
     /**性别*/
     private String sex;
-    /**邮箱*/
-    private String email;
-    /**电话号码*/
-    private String phoneNumber;
-    /**身份证*/
-    private String useriDentification;
-    /**地址*/
-    private String userAdress;
-    /** 省*/
-    private String UserProvince;
 
 
 }
