@@ -46,6 +46,20 @@ public class UserController {
         return resBody;
 
     }
-
+    @Consumes(ContentType.APPLICATION_JSON_UTF_8)
+    @Produces(ContentType.APPLICATION_JSON_UTF_8)
+    @RequestMapping(value="/saveUserInfo", method= {RequestMethod.POST,RequestMethod.GET})
+    @ResponseBody
+    public ResBody<UserEntityResp> saveUserInfo(@Context HttpServletRequest request, String data) {
+        //打印请求日志
+        log.reqPrint(DEMO_USER_CONSUMER, data);
+        //将请求体转化为实体
+        UserEntityReq userEntityReq = JSONObject.parseObject(data, UserEntityReq.class);
+        //创建返回
+        ResBody<UserEntityResp> resBody = new ResBody<UserEntityResp>();
+        UserEntityResp ss = new UserEntityResp();
+        log.respPrint(DEMO_USER_CONSUMER, JSON.toJSONString(resBody));
+        return resBody;
+    }
 
 }

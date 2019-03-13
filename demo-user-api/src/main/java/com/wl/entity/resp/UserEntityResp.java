@@ -16,11 +16,17 @@ public class UserEntityResp  implements Serializable{
     /**用户id */
     private String userId;
     /**用户姓名*/
-    private String UserName;
+    private String userName;
     /**年龄*/
     private int age;
     /**性别*/
     private String sex;
+    /**邮箱*/
+    private String email;
+    /**电话号码*/
+    private String phoneNumber;
+    /**身份证*/
+    private String useriDentification;
 
 
 }

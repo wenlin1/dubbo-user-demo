@@ -1,11 +1,7 @@
 package com.wl.entity.req;
 
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
-
 import java.io.Serializable;
 
 /**

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://code.alibabatech.com/schema/dubbo">
+    
+    <!-- dubbo公共配置设置 -->
+    <dubbo:application name="demo-user-provider" owner="WL"
+                       organization="wl"/>
+    
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" file="${dubbo.registry.file}"/>
+    
+    <dubbo:provider timeout="28000" retries="0"  token="true"/>
+
+    
+    <dubbo:protocol name="dubbo" port="${dubbo.protocol.port}"
+                    server="netty" client="netty" serialization="dubbo" charset="UTF-8"
+                    threadpool="fixed" threads="500" queues="0" buffer="8192" accepts="0"
+                    payload="8388608"/>
+    
+    <!-- 用户信息 -->
+    <dubbo:service interface=" com.wl.entity.service.UserService" ref="userService"/>
+</beans>

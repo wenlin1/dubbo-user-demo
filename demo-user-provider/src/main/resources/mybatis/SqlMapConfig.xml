@@ -7,8 +7,10 @@
         <setting name="logPrefix" value="mybatislog."/>
     </settings>
     <typeAliases>
-
+        <typeAlias alias="userEntityReq" type="com.wl.entity.req.UserEntityReq"/>
+        <typeAlias alias="userEntityResp" type="com.wl.entity.resp.UserEntityResp"/>
    </typeAliases>
     <mappers>
+        <mapper resource="mybatis/user/userDemo.xml"/>
     </mappers>
 </configuration>
